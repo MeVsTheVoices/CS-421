@@ -1,0 +1,39 @@
+Script started on 2023-02-07 12:49:27-08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ls
+[?2004lPart-1
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ls[K[Kcd ~
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls [K
+[?2004l[0m[01;34mCS-421[0m   [01;34mDocuments[0m  [01;34mMusic[0m     [01;34mPublic[0m  [01;34mTemplates[0m
+[01;34mDesktop[0m  [01;34mDownloads[0m  [01;34mPictures[0m  [01;34msnap[0m    [01;34mVideos[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls -a
+[?2004l[0m[01;34m.[0m              [01;34m.cache[0m     [01;34mDownloads[0m   [01;34mPictures[0m  [01;34m.ssh[0m
+[01;34m..[0m             [01;34m.config[0m    .gitconfig  [01;34m.pki[0m      .sudo_as_admin_successful
+.bash_history  [01;34mCS-421[0m     [01;34m.gnupg[0m      .profile  [01;34mTemplates[0m
+.bash_logout   [01;34mDesktop[0m    [01;34m.local[0m      [01;34mPublic[0m    [01;34mVideos[0m
+.bashrc        [01;34mDocuments[0m  [01;34mMusic[0m       [01;34msnap[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ mkdir unixstuff
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls
+[?2004l[0m[01;34mCS-421[0m   [01;34mDocuments[0m  [01;34mMusic[0m     [01;34mPublic[0m  [01;34mTemplates[0m  [01;34mVideos[0m
+[01;34mDesktop[0m  [01;34mDownloads[0m  [01;34mPictures[0m  [01;34msnap[0m    [01;34munixstuff[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ cd unixstuff/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cd [K[K[Kls -a
+[?2004l[0m[01;34m.[0m  [01;34m..[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cd .
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ pwd
+[?2004l/home/jdizzle
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls unixstuff
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls backups
+[?2004lls: cannot access 'backups': No such file or directory
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls unixstuff/bv[Kackupos
+[?2004lls: cannot access 'unixstuff/backupos': No such file or directory
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls ~/unixstuff/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls ~
+[?2004l[0m[01;34mCS-421[0m   [01;34mDocuments[0m  [01;34mMusic[0m     [01;34mPublic[0m  [01;34mTemplates[0m  [01;34mVideos[0m
+[01;34mDesktop[0m  [01;34mDownloads[0m  [01;34mPictures[0m  [01;34msnap[0m    [01;34munixstuff[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ ls ~/..
+[?2004l[0m[01;34mjdizzle[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-07 12:50:50-08:00 [COMMAND_EXIT_CODE="0"]

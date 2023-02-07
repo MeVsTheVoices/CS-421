@@ -1,0 +1,74 @@
+Script started on 2023-02-07 13:07:37-08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ script Part[K[K[K[K[K[K[K[K[K[K[Kcd .. /..[K[K[K[K.[K/.[K../unixstuff/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ ls
+[?2004l[0m[01;34mbackups[0m  science.txt
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ echo[K[K[K[Kcat >list1
+[?2004lapple
+orange
+banana
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cat >list2
+[?2004lfr  kik wi
+pineapple
+guava
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ ls list*
+[?2004llist1  list2
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cat list* > bigL[Klist
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cat biglist > [K[K|sort[K[K[K[K sort > f[Kslist
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ ls
+[?2004l[0m[01;34mbackups[0m  biglist  list1  list2  science.txt  slist
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ cat slist 
+[?2004lapple
+banana
+guava
+kiwi
+orange
+pineapple
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ ls *list
+[?2004lbiglist  slist
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ ls ?list
+[?2004lslist
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ man wc
+[?2004l[?1049h[22;0;0t[?1h=WC(1)                            User Commands                           WC(1)[m
+[m
+[1mNAME[0m[m
+       wc - print newline, word, and byte counts for each file[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwc[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1mwc[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Print newline, word, and byte counts for each FILE, and a total line if[m
+       more than one FILE is specified.  A word is a non-zero-length  sequence[m
+       of characters delimited by white space.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       The  options  below may be used to select which counts are printed, al‐[m
+       ways in the following order: newline, word,  character,  byte,  maximum[m
+       line length.[m
+[m
+       [1m-c[0m, [1m--bytes[0m[m
+              print the byte counts[m
+[m
+[7m Manual page wc(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ whatis wc
+[?2004lwc (1)               - print newline, word, and byte counts for each file
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ apropos copy
+[?2004lClone (3pm)          - recursively copy Perl datatypes
+cp (1)               - copy files and directories
+cpgr (8)             - copy with locking the given file to the password or gr...
+cpio (1)             - copy files to and from archives
+cppw (8)             - copy with locking the given file to the password or gr...
+dd (1)               - convert and copy a file
+debconf-copydb (1)   - copy a debconf database
+git-checkout-index (1) - Copy files from the index to the working tree
+install (1)          - copy files and set attributes
+ntfscp (8)           - copy file to an NTFS volume.
+rcp (1)              - OpenSSH secure file copy
+rsync (1)            - a fast, versatile, remote (and local) file-copying tool
+scp (1)              - OpenSSH secure file copy
+ssh-copy-id (1)      - use locally available keys to authorise logins on a re...
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/unixstuff[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/unixstuff[00m$ q[Kexit
+[?2004lexit
+
+Script done on 2023-02-07 13:09:57-08:00 [COMMAND_EXIT_CODE="0"]

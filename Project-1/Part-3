@@ -1,0 +1,99 @@
+Script started on 2023-02-07 12:53:58-08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat
+[?2004lhelo lo
+hello
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat > list1
+[?2004lpear
+bvanana      anana
+apple
+^F  [?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list1 
+[?2004lpear
+banana
+apple
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ct[Kat < [K[K> pra[K[K[Klist2
+[?2004lorange
+b plus
+mange o
+grapefruit
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ca [Kt list2 
+[?2004lorange
+plus
+mango
+grapefruit
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat >> list1
+[?2004lpeach
+d grape
+orange
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list1
+[?2004lpear
+banana
+apple
+peach
+grape
+orange
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list1 [K[K{1,2} > gi[K[Kbiglist
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat biglist
+[?2004lpear
+banana
+apple
+peach
+grape
+orange
+orange
+plus
+mango
+grapefruit
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ sort < biglist
+[?2004lapple
+banana
+grape
+grapefruit
+mango
+orange
+orange
+peach
+pear
+plus
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ sort < [K biglist > slist
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ who
+[?2004ljdizzle  :0           2023-02-07 12:18 (:0)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat slist
+[?2004lapple
+banana
+grape
+grapefruit
+mango
+orange
+orange
+peach
+pear
+plus
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ who
+[?2004ljdizzle  :0           2023-02-07 12:18 (:0)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ who > names.txt
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ sort < nma[K[Kames.txt
+[?2004ljdizzle  :0           2023-02-07 12:18 (:0)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ who | sort
+[?2004ljdizzle  :0           2023-02-07 12:18 (:0)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ who | wc -l
+[?2004l1
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list* | grep p
+[?2004l[01;31m[Kp[m[Kear
+a[01;31m[Kp[m[K[01;31m[Kp[m[Kle
+[01;31m[Kp[m[Keach
+gra[01;31m[Kp[m[Ke
+[01;31m[Kp[m[Klus
+gra[01;31m[Kp[m[Kefruit
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list* | grep p[C p- p
+[?2004lgrep: p: No such file or directory
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cat list* | grep - pi p
+[?2004l[01;31m[Kp[m[Kear
+a[01;31m[Kp[m[K[01;31m[Kp[m[Kle
+[01;31m[Kp[m[Keach
+gra[01;31m[Kp[m[Ke
+[01;31m[Kp[m[Klus
+gra[01;31m[Kp[m[Kefruit
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-07 12:56:50-08:00 [COMMAND_EXIT_CODE="0"]

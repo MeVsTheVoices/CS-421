@@ -1,0 +1,27 @@
+1) Change to another directory called CS421
+    cd CS421
+2) Delete a file called nicefile
+    rm nicefile
+3) Rename prog7.c to prog8.c
+    mv prog7.c prog8.c
+4) List the contents of the current directory including all file details
+    ls -la (or just -l to ignore hidden)
+5) Print your current working directory
+    pwd
+6) Make a new directory called cleverdir
+    mkdir cleverdir
+7) Display the contents of a file called shortfile
+    cat shortfile
+For the editor you chose to use, what command/action do you use to:
+8) Add a new line of code
+    -press o - start writing on new line
+    -write on new line
+    -press escape
+    -type and enter :w to save
+9) Search for a string
+    -press escape
+    -type /
+    -anything that comes after / and before enter is searched for
+10) Save the file
+    -press escape
+    -type :w and hit enter

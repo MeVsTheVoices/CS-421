@@ -1,10 +1,9 @@
-Script started on 2023-02-07 17:10:13-08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="101" LINES="55"]
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ *s[K[Kcd *6
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ ls
-[?2004l[0m[01;32ma.out[0m  multiply.c
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ rm a.out 
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cat multiply.c 
-[?2004l#include <stdio.h>
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1$ cd *6
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ ls
+a.out  multiply.c
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ rm a.out 
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ cat multiply.c 
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char* argv[]) {
@@ -21,19 +20,21 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cc multiply.c 
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ ./a.out 55 44
-[?2004lFirst parameter is 55
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ cc multiply.c 
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ ./a.out 55 44
+First parameter is 55
 Second parameter is 44
 Product is 2420
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cd ..
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd *7
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ ls
-[?2004l[0m[01;32ma.out[0m  enter_multiply.c  Part-7
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ rm a.out 
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ g[Kcc enter_multiply.c 
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ cat enter_multiply.c 
-[?2004l#include <stdio.h>
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-6$ cd ..
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1$ cd *7
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ ls
+a.out  enter_multiply.c  Part-7
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ rm a.out 
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ cc enter_multiply.c 
+
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ cat enter_multiply.c
+ 
+#include <stdio.h>
 #include <stdlib.h>
 
 void main() {
@@ -47,23 +48,24 @@ void main() {
     printf("Product is %d\n", first * second);
 }
 
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ ./a.out 
-[?2004lPlease enter the first parameter: 77
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ ./a.out 
+Please enter the first parameter: 77
 Please enter the second paramter: 66
 First parameter is 77
 Second parameter is 66
 Product is 5082
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ cd ..
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd *9
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
-[?2004linputfile  [0m[01;32mJDprog3[0m  makefile  multiply_file.c  multiply_file.o  Part-9
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ rm JDprog3 
-[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ make clean
-[?2004lrm *.o
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ld[K[Kls
-[?2004linputfile  makefile  multiply_file.c  Part-9
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ cat multiply_file.c 
-[?2004l#include <stdio.h>
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-7$ cd ..
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1$ cd *9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ ls
+inputfile  JDprog3  makefile  multiply_file.c  multiply_file.o  Part-9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ rm JDprog3 
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ make clean
+rm *.o
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ ls
+inputfile  makefile  multiply_file.c  Part-9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ cat multiply_file.c 
+
+#include <stdio.h>
 #include <stdlib.h>
 
 void main() {
@@ -78,18 +80,17 @@ void main() {
     printf("Reading second parameter %d\n", b);
     printf("Product is %d\n", a * b);
 }
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
-[?2004linputfile  makefile  multiply_file.c  Part-9
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ make
-[?2004lcc -c multiply_file.c
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ ls
+inputfile  makefile  multiply_file.c  Part-9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ make
+cc -c multiply_file.c
 cc -o JDprog3 multiply_file.o
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
-[?2004linputfile  [0m[01;32mJDprog3[0m  makefile  multiply_file.c  multiply_file.o  Part-9
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ /.[K[K./Jd[KDprog3 
-[?2004lReading first parameter 9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ ls
+inputfile  JDprog3  makefile  multiply_file.c  multiply_file.o  Part-9
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ ./JDprog3 
+Reading first parameter 9
 Reading second parameter 11
 Product is 99
-[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ exit
-[?2004lexit
+jdizzle@jdizzle-bigbox-ubuntu-vm:~/CS-421/Project-1/Part-9$ exit
+exit
 
-Script done on 2023-02-07 17:12:20-08:00 [COMMAND_EXIT_CODE="0"]

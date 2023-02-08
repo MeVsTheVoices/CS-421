@@ -115,4 +115,121 @@ Product is 99
 [?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ mv inputfile JD* Programs/ls[K
 [?2004l[0m[01;34mPart-1[0m  [01;34mPart-3[0m  [01;34mPart-5[0m  [01;34mPart-7[0m  [01;34mPart-9[0m
 [01;34mPart-2[0m  [01;34mPart-4[0m  [01;34mPart-6[0m  [01;34mPart-8[0m  [01;34mPrograms[0m
-[?2004h]0;jdizzle@jdizzle-bigbox-ubun
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ls Programs/
+[?2004linputfile  [0m[01;32mJDprog1[0m  [01;32mJDprog2[0m  [01;32mJDprog3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd Programs/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./JDprog1 
+[?2004lMust supply two integers as arguments
+Segmentation fault (core dumped)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./JDprog1 4 7
+[?2004lFirst parameter is 4
+Second parameter is 7
+Product is 28
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./JDprog1 4 7[K[K[K[K[K2 
+[?2004lPlease enter the first parameter: 5
+Please enter the second paramter: 4
+First parameter is 5
+Second parameter is 4
+Product is 20
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./JDprog2 [K[K3
+[?2004lReading first parameter 9
+Reading second parameter 11
+Product is 99
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ cd [K[K[Kcd ../..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421[00m$ git add --all
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421[00m$ c[Kgit commit -m "finished part 8 of pro ject 1")[K
+[?2004l[main 650b9b5] finished part 8 of project 1
+ 8 files changed, 141 insertions(+)
+ create mode 100644 Project-1/Part-8/Part-8
+ create mode 100755 Project-1/Part-8/a.out
+ create mode 100644 Project-1/Part-8/inputfile
+ create mode 100644 Project-1/Part-8/multiply_file.c
+ rename Project-1/{ => Programs}/JDprog1 (100%)
+ rename Project-1/{ => Programs}/JDprog2 (100%)
+ create mode 100755 Project-1/Programs/JDprog3
+ create mode 100644 Project-1/Programs/inputfile
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421[00m$ git push
+[?2004lEnumerating objects: 11, done.
+Counting objects:   9% (1/11)Counting objects:  18% (2/11)Counting objects:  27% (3/11)Counting objects:  36% (4/11)Counting objects:  45% (5/11)Counting objects:  54% (6/11)Counting objects:  63% (7/11)Counting objects:  72% (8/11)Counting objects:  81% (9/11)Counting objects:  90% (10/11)Counting objects: 100% (11/11)Counting objects: 100% (11/11), done.
+Compressing objects:  12% (1/8)Compressing objects:  25% (2/8)Compressing objects:  37% (3/8)Compressing objects:  50% (4/8)Compressing objects:  62% (5/8)Compressing objects:  75% (6/8)Compressing objects:  87% (7/8)Compressing objects: 100% (8/8)Compressing objects: 100% (8/8), done.
+Writing objects:  11% (1/9)Writing objects:  22% (2/9)Writing objects:  33% (3/9)Writing objects:  44% (4/9)Writing objects:  55% (5/9)Writing objects:  66% (6/9)Writing objects:  77% (7/9)Writing objects:  88% (8/9)Writing objects: 100% (9/9)Writing objects: 100% (9/9), 7.88 KiB | 7.88 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/1)[Kremote: Resolving deltas: 100% (1/1)[Kremote: Resolving deltas: 100% (1/1), completed with 1 local object.[K
+To https://github.com/MeVsTheVoices/CS-421.git
+   e5979f5..650b9b5  main -> main
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421[00m$ cd Project-1/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd Programs/[K[K[K[K[K[K[K[Kart-8/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ ls
+[?2004l[0m[01;32ma.out[0m  inputfile  multiply_file.c  Part-8
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ rm a.out 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ rm [K[K[Kcd Pr[K[K[K[K[Kcd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd Programs/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ls
+[?2004linputfile  [0m[01;32mJDprog1[0m  [01;32mJDprog2[0m  [01;32mJDprog3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ rm JDprog1 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ln -s JDProg1 ../P art-6/
+a.out       multiply.c  
+]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ln -s JDProg1 ../Part-6/a.out 
+[?2004lln: failed to create symbolic link '../Part-6/a.out': File exists
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ln -s JDProg1 ../Part-6/a.out [K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K..Pr[K[K[K./Programs/ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[Kart-6/a.out JDProg1
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ls
+[?2004linputfile  [0m[01;36mJDProg1[0m  [01;32mJDprog2[0m  [01;32mJDprog3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./JDprog1
+[?2004lbash: ./JDprog1: No such file or directory
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ls [K -l
+[?2004ltotal 36
+-rw-rw-r-- 1 jdizzle jdizzle    11 Feb  7 16:45 inputfile
+lrwxrwxrwx 1 jdizzle jdizzle    15 Feb  7 16:49 [0m[01;36mJDProg1[0m -> [01;32m../Part-6/a.out[0m
+-rwxrwxr-x 1 jdizzle jdizzle 16072 Feb  7 16:36 [01;32mJDprog2[0m
+-rwxrwxr-x 1 jdizzle jdizzle 16112 Feb  7 16:45 [01;32mJDprog3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ln[K[Krm JDprog2 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ rm JDprog3 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ rm JDprog3 2[C[6Pls -l./JDprog1ls[Kn -s ../Part-6/a.out JDProg1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/a.ou[1P[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C7/a.o[1@u[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[K2
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ln -s ../Part-7/a.out JDProg2[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/a.ou[1P[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C8/a.o[1@u[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[K3
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ls
+[?2004linputfile  [0m[01;36mJDProg1[0m  [01;36mJDProg2[0m  [40;31;01mJDProg3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ lsn -s ../Part-8/a.out JDProg3[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C7/a.o[C[C[C[C[C[C[C[C[C2[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [7Prm JDprog3 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2[C[6Pls -lrm JDprog2 3[Cln -s ../Part-7/a.out JDProg2[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C8/a.o[C[C[C[C[C[C[C[C[C3[A]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ [Cs[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kcd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd *8
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ ls
+[?2004linputfile  multiply_file.c  Part-8
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ cc multiply_file.c 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ ..
+[?2004l..: command not found
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ cd Pr
+[?2004lbash: cd: Pr: No such file or directory
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-8[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-8[00m$ cd Programs[K[K[K[K[K[K[K[K[K[K[Kcd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd Programs/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ls
+[?2004linputfile  [0m[01;36mJDProg1[0m  [01;36mJDProg2[0m  [01;36mJDProg3[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ ./Pr[K[KJDProg1
+[?2004lMust supply two integers as arguments
+Segmentation fault (core dumped)
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ cd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd Programs/[K[K[K[K[K[Kjec[K[K[Kgrams/
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Programs[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Programs[00m$ cd ../[K
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ ;[Kls
+[?2004l[0m[01;34mPart-1[0m  [01;34mPart-3[0m  [01;34mPart-5[0m  [01;34mPart-7[0m  [01;34mPart-9[0m
+[01;34mPart-2[0m  [01;34mPart-4[0m  [01;34mPart-6[0m  [01;34mPart-8[0m  [01;34mPrograms[0m
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd ([K*9
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ cp ../*8 .
+[?2004lcp: -r not specified; omitting directory '../Part-8'
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ cp ../*8 ./ .* .
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004l[0m[01;32ma.out[0m  inputfile  multiply_file.c  Part-8
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ rm a.out 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ vim makefile
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"makefile" [New][2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[38;5;130m  1 [m
+[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1[9CAll[1;5H[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\P$q q\[?12$p[?25l[24;53H:[1;5H[24;54H3[1;5H[24;55H0[1;5H[24;56H3[1;5H[24;57H0[1;5H[24;58H/[1;5H[24;59H0[1;5H[24;60Ha[1;5H[24;61H0[1;5H[24;62Ha[1;5H[?25h[?25l[24;53H          [1;5H[27m[23m[29m[m[H[2J[1;1H[93m  1 [m
+[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1[9CAll"makefile" [New][1;5H[?25h[?25l[24;53H:[1;5H[24;1H[K[24;1H:[?25hset noet[?25l[1;5H[24;63H0,0-1[9CAll[1;5H[?25h[?25l[24;53H:[1;5H[24;1H[K[24;1H:[?25hq[?25l[?2004l[>4;m[23;2t[23;1t[24;1H[K[24;1H[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004linputfile  multiply_file.c  Part-8
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-07 16:53:28-08:00 [COMMAND_EXIT_CODE="0"]

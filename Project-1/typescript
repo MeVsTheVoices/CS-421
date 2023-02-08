@@ -1,0 +1,95 @@
+Script started on 2023-02-07 17:10:13-08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="101" LINES="55"]
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ *s[K[Kcd *6
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ ls
+[?2004l[0m[01;32ma.out[0m  multiply.c
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ rm a.out 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cat multiply.c 
+[?2004l#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        printf("Must supply two integers as arguments\n");
+    }
+    int x = atoi(argv[1]);
+    int y = atoi(argv[2]);
+    printf("First parameter is %d\n", x);
+    //printf("First parameter is %s\n", argv[1]);
+    printf("Second parameter is %d\n", y);
+    //printf("Second parameter is %s\n", argv[2]);
+    printf("Product is %d\n", x * y);
+
+    return 0;
+}
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cc multiply.c 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ ./a.out 55 44
+[?2004lFirst parameter is 55
+Second parameter is 44
+Product is 2420
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-6[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-6[00m$ cd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd *7
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ ls
+[?2004l[0m[01;32ma.out[0m  enter_multiply.c  Part-7
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ rm a.out 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ g[Kcc enter_multiply.c 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ cat enter_multiply.c 
+[?2004l#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+    int first, second;
+    printf("Please enter the first parameter: ");
+    scanf("%d", &first);
+    printf("Please enter the second paramter: ");
+    scanf("%d", &second);
+    printf("First parameter is %d\n", first);
+    printf("Second parameter is %d\n", second);
+    printf("Product is %d\n", first * second);
+}
+
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ ./a.out 
+[?2004lPlease enter the first parameter: 77
+Please enter the second paramter: 66
+First parameter is 77
+Second parameter is 66
+Product is 5082
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-7[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-7[00m$ cd ..
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1[00m$ cd *9
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004linputfile  [0m[01;32mJDprog3[0m  makefile  multiply_file.c  multiply_file.o  Part-9
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ rm JDprog3 
+[?2004l[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ make clean
+[?2004lrm *.o
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ld[K[Kls
+[?2004linputfile  makefile  multiply_file.c  Part-9
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ cat multiply_file.c 
+[?2004l#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+    FILE *fp;
+    int a, b;
+
+    fp = fopen("inputfile", "r");
+    fscanf(fp, "%d", &a);
+    fscanf(fp, "%d", &b);
+
+    printf("Reading first parameter %d\n", a);
+    printf("Reading second parameter %d\n", b);
+    printf("Product is %d\n", a * b);
+}
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004linputfile  makefile  multiply_file.c  Part-9
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ make
+[?2004lcc -c multiply_file.c
+cc -o JDprog3 multiply_file.o
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ ls
+[?2004linputfile  [0m[01;32mJDprog3[0m  makefile  multiply_file.c  multiply_file.o  Part-9
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ /.[K[K./Jd[KDprog3 
+[?2004lReading first parameter 9
+Reading second parameter 11
+Product is 99
+[?2004h]0;jdizzle@jdizzle-bigbox-ubuntu-vm: ~/CS-421/Project-1/Part-9[01;32mjdizzle@jdizzle-bigbox-ubuntu-vm[00m:[01;34m~/CS-421/Project-1/Part-9[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-07 17:12:20-08:00 [COMMAND_EXIT_CODE="0"]

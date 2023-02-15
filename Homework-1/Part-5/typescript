@@ -1,0 +1,918 @@
+Script started on 2023-02-14 19:35:21-06:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="75"]
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffd245a1ab0 /* 23 vars */) = 0
+brk(NULL)                               = 0x5646a1285000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd64211340) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7faf62459000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7faf62454000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7faf6222c000
+mmap(0x7faf62254000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7faf62254000
+mmap(0x7faf623e9000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7faf623e9000
+mmap(0x7faf62441000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7faf62441000
+mmap(0x7faf62447000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7faf62447000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7faf62229000
+arch_prctl(ARCH_SET_FS, 0x7faf62229740) = 0
+set_tid_address(0x7faf62229a10)         = 36446
+set_robust_list(0x7faf62229a20, 24)     = 0
+rseq(0x7faf6222a0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7faf62441000, 16384, PROT_READ) = 0
+mprotect(0x5646a03bb000, 4096, PROT_READ) = 0
+mprotect(0x7faf62493000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7faf62454000, 20139)           = 0
+getrandom("\xdf\xfe\xc8\xb5\x3f\x8d\xdc\x4c", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5646a1285000
+brk(0x5646a12a6000)                     = 0x5646a12a6000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7faf61f40000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8jdizzle
+)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ [K]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffc16f22ce0 /* 23 vars */) = 0
+brk(NULL)                               = 0x55fa277fe000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc0823d320) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff3d0639000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7ff3d0634000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff3d040c000
+mmap(0x7ff3d0434000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7ff3d0434000
+mmap(0x7ff3d05c9000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7ff3d05c9000
+mmap(0x7ff3d0621000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7ff3d0621000
+mmap(0x7ff3d0627000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7ff3d0627000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff3d0409000
+arch_prctl(ARCH_SET_FS, 0x7ff3d0409740) = 0
+set_tid_address(0x7ff3d0409a10)         = 36450
+set_robust_list(0x7ff3d0409a20, 24)     = 0
+rseq(0x7ff3d040a0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7ff3d0621000, 16384, PROT_READ) = 0
+mprotect(0x55fa2623a000, 4096, PROT_READ) = 0
+mprotect(0x7ff3d0673000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7ff3d0634000, 20139)           = 0
+getrandom("\x16\xe6\x9a\xaa\xe6\xdb\x70\xe8", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55fa277fe000
+brk(0x55fa2781f000)                     = 0x55fa2781f000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7ff3d0120000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8jdizzle
+)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ man strace
+[?2004l[?1049h[22;0;0t[?1h=STRACE(1)                                                                       General Commands Manual                                                                       STRACE(1)[m
+[m
+[1mNAME[0m[m
+       strace - trace system calls and signals[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mstrace[0m [[1m-ACdffhikqqrtttTvVwxxyyzZ[0m] [[1m-I[0m [4mn[24m] [[1m-b[0m [4mexecve[24m] [[1m-e[0m [4mexpr[24m]... [[1m-O[0m [4moverhead[24m] [[1m-S[0m [4msortby[24m] [[1m-U[0m [4mcolumns[24m] [[1m-a[0m [4mcolumn[24m] [[1m-o[0m [4mfile[24m] [[1m-s[0m [4mstrsize[24m] [[1m-X[0m [4mformat[24m] [[1m-P[0m [4mpath[24m]...[m
+              [[1m-p[0m [4mpid[24m]... [[1m--seccomp-bpf[0m] { [1m-p[0m [4mpid[24m | [[1m-DDD[0m] [[1m-E[0m [4mvar[24m[=[4mval[24m]]... [[1m-u[0m [4musername[24m] [4mcommand[24m [[4margs[24m] }[m
+[m
+       [1mstrace[0m [1m-c[0m [[1m-dfwzZ[0m] [[1m-I[0m [4mn[24m] [[1m-b[0m [4mexecve[24m] [[1m-e[0m [4mexpr[24m]... [[1m-O[0m [4moverhead[24m] [[1m-S[0m [4msortby[24m] [[1m-U[0m [4mcolumns[24m] [[1m-P[0m [4mpath[24m]... [[1m-p[0m [4mpid[24m]... [[1m--seccomp-bpf[0m] { [1m-p[0m [4mpid[24m | [[1m-DDD[0m] [[1m-E[0m [4mvar[24m[=[4mval[24m]]...[m
+              [[1m-u[0m [4musername[24m] [4mcommand[24m [[4margs[24m] }[m
+[m
+[1mDESCRIPTION[0m[m
+       In  the  simplest case [1mstrace[0m runs the specified [4mcommand[24m until it exits.  It intercepts and records the system calls which are called by a process and the signals which are re‐[m
+       ceived by a process.  The name of each system call, its arguments and its return value are printed on standard error or to the file specified with the [1m-o[0m option.[m
+[m
+       [1mstrace[0m is a useful diagnostic, instructional, and debugging tool.  System administrators, diagnosticians and trouble-shooters will find it invaluable for solving problems  with[m
+       programs  for which the source is not readily available since they do not need to be recompiled in order to trace them.  Students, hackers and the overly-curious will find that[m
+       a great deal can be learned about a system and its system calls by tracing even ordinary programs.  And programmers will find that since system calls  and  signals  are  events[m
+       that happen at the user/kernel interface, a close examination of this boundary is very useful for bug isolation, sanity checking and attempting to capture race conditions.[m
+[m
+       Each line in the trace contains the system call name, followed by its arguments in parentheses and its return value.  An example from stracing the command "cat /dev/null" is:[m
+[m
+           open("/dev/null", O_RDONLY) = 3[m
+[m
+       Errors (typically a return value of -1) have the errno symbol and error string appended.[m
+[m
+           open("/foo/bar", O_RDONLY) = -1 ENOENT (No such file or directory)[m
+[m
+       Signals are printed as signal symbol and decoded siginfo structure.  An excerpt from stracing and interrupting the command "sleep 666" is:[m
+[m
+           sigsuspend([] <unfinished ...>[m
+           --- SIGINT {si_signo=SIGINT, si_code=SI_USER, si_pid=...} ---[m
+           +++ killed by SIGINT +++[m
+[m
+       If a system call is being executed and meanwhile another one is being called from a different thread/process then [1mstrace[0m will try to preserve the order of those events and mark[m
+       the ongoing call as being [4munfinished[24m.  When the call returns it will be marked as [4mresumed[24m.[m
+[m
+           [pid 28772] select(4, [3], NULL, NULL, NULL <unfinished ...>[m
+           [pid 28779] clock_gettime(CLOCK_REALTIME, {1130322148, 939977000}) = 0[m
+           [pid 28772] <... select resumed> )      = 1 (in [3])[m
+[m
+       Interruption of a (restartable) system call by a signal delivery is processed differently as kernel terminates the system call and also arranges its immediate reexecution after[m
+       the signal handler completes.[m
+[m
+           read(0, 0x7ffff72cf5cf, 1)              = ? ERESTARTSYS (To be restarted)[m
+           --- SIGALRM ... ---[m
+           rt_sigreturn(0xe)                       = 0[m
+           read(0, "", 1)                          = 0[m
+[m
+       Arguments are printed in symbolic form with passion.  This example shows the shell performing ">>xyzzy" output redirection:[m
+[m
+           open("xyzzy", O_WRONLY|O_APPEND|O_CREAT, 0666) = 3[m
+[m
+       Here, the second and the third argument of [1mopen[0m(2) are decoded by breaking down the flag argument into its three bitwise-OR constituents and printing the mode value in octal by[m
+       tradition.  Where the traditional or native usage differs from ANSI or POSIX, the latter forms are preferred.  In some cases, [1mstrace[0m output is proven to be more  readable  than[m
+       the source.[m
+[m
+       Structure pointers are dereferenced and the members are displayed as appropriate.  In most cases, arguments are formatted in the most C-like fashion possible.  For example, the[m
+       essence of the command "ls -l /dev/null" is captured as:[m
+[m
+           lstat("/dev/null", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0[m
+[m
+       Notice how the 'struct stat' argument is dereferenced and how each member is displayed symbolically.  In particular, observe how the [1mst_mode[0m member is carefully decoded into  a[m
+       bitwise-OR of symbolic and numeric values.  Also notice in this example that the first argument to [1mlstat[0m(2) is an input to the system call and the second argument is an output.[m
+       Since output arguments are not modified if the system call fails, arguments may not always be dereferenced.  For example, retrying the "ls -l" example with a non-existent  file[m
+       produces the following line:[m
+[m
+           lstat("/foo/bar", 0xb004) = -1 ENOENT (No such file or directory)[m
+[m
+       In this case the porch light is on but nobody is home.[m
+[m
+       Syscalls unknown to [1mstrace[0m are printed raw, with the unknown system call number printed in hexadecimal form and prefixed with "syscall_":[m
+[m
+[7m Manual page strace(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ man whoami
+[?2004l[?1049h[22;0;0t[?1h=WHOAMI(1)                                                                            User Commands                                                                            WHOAMI(1)[m
+[m
+[1mNAME[0m[m
+       whoami - print effective userid[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwhoami[0m [[4mOPTION[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Print the user name associated with the current effective user ID.  Same as id [1m-un[0m.[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by Richard Mlynarik.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report any translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2020 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       Full documentation <https://www.gnu.org/software/coreutils/whoami>[m
+       or available locally via: info '(coreutils) whoami invocation'[m
+[m
+GNU coreutils 8.32                                                                   February 2022                                                                            WHOAMI(1)[m
+[7m Manual page whoami(1) line 1/32 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ man whoamistracestrace whoami
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffd38d64dd0 /* 23 vars */) = 0
+brk(NULL)                               = 0x562767778000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcc21fb3e0) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f870be49000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f870be44000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f870bc1c000
+mmap(0x7f870bc44000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f870bc44000
+mmap(0x7f870bdd9000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f870bdd9000
+mmap(0x7f870be31000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f870be31000
+mmap(0x7f870be37000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f870be37000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f870bc19000
+arch_prctl(ARCH_SET_FS, 0x7f870bc19740) = 0
+set_tid_address(0x7f870bc19a10)         = 36486
+set_robust_list(0x7f870bc19a20, 24)     = 0
+rseq(0x7f870bc1a0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f870be31000, 16384, PROT_READ) = 0
+mprotect(0x562766404000, 4096, PROT_READ) = 0
+mprotect(0x7f870be83000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f870be44000, 20139)           = 0
+getrandom("\x21\xa0\xa0\x68\xee\x39\xb0\x8e", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x562767778000
+brk(0x562767799000)                     = 0x562767799000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f870b930000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8jdizzle
+)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami |w [K[K wc l
+[?2004lwc: l: No such file or directory
+execve("/usr/bin/whoami", ["whoami"], 0x7ffcc0a5b140 /* 23 vars */) = 0
+brk(NULL)                               = 0x562c2ada1000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdcff08b00) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd6fc82a000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd6fc825000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd6fc5fd000
+mmap(0x7fd6fc625000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fd6fc625000
+mmap(0x7fd6fc7ba000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fd6fc7ba000
+mmap(0x7fd6fc812000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fd6fc812000
+mmap(0x7fd6fc818000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd6fc818000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd6fc5fa000
+arch_prctl(ARCH_SET_FS, 0x7fd6fc5fa740) = 0
+set_tid_address(0x7fd6fc5faa10)         = 36491
+set_robust_list(0x7fd6fc5faa20, 24)     = 0
+rseq(0x7fd6fc5fb0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fd6fc812000, 16384, PROT_READ) = 0
+mprotect(0x562c2915a000, 4096, PROT_READ) = 0
+mprotect(0x7fd6fc864000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fd6fc825000, 20139)           = 0
+getrandom("\xd4\xd4\xba\x4a\xde\xd1\x72\x99", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x562c2ada1000
+brk(0x562c2adc2000)                     = 0x562c2adc2000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd6fc311000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = -1 EPIPE (Broken pipe)
+--- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=36491, si_uid=1000} ---
++++ killed by SIGPIPE +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc l[K-l
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7fff775bb9f0 /* 23 vars */) = 0
+brk(NULL)                               = 0x55a653e3f000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffed8e60b00) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f276bc85000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f276bc80000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f276ba58000
+mmap(0x7f276ba80000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f276ba80000
+mmap(0x7f276bc15000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f276bc15000
+mmap(0x7f276bc6d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f276bc6d000
+mmap(0x7f276bc73000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f276bc73000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f276ba55000
+arch_prctl(ARCH_SET_FS, 0x7f276ba55740) = 0
+set_tid_address(0x7f276ba55a10)         = 36496
+set_robust_list(0x7f276ba55a20, 24)     = 0
+rseq(0x7f276ba560e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f276bc6d000, 16384, PROT_READ) = 0
+mprotect(0x55a653e1f000, 4096, PROT_READ) = 0
+mprotect(0x7f276bcbf000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f276bc80000, 20139)           = 0
+getrandom("\xe5\x09\xe9\x41\x12\xae\x3a\x69", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55a653e3f000
+brk(0x55a653e60000)                     = 0x55a653e60000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f276b76c000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = 8
+close(11
+)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc -l[K[K
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffd5e0a4170 /* 23 vars */) = 0
+brk(NULL)                               = 0x55aa8a804000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdf677bd80) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f70d0fe3000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f70d0fde000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f70d0db6000
+mmap(0x7f70d0dde000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f70d0dde000
+mmap(0x7f70d0f73000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f70d0f73000
+mmap(0x7f70d0fcb000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f70d0fcb000
+mmap(0x7f70d0fd1000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f70d0fd1000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f70d0db3000
+arch_prctl(ARCH_SET_FS, 0x7f70d0db3740) = 0
+set_tid_address(0x7f70d0db3a10)         = 36501
+set_robust_list(0x7f70d0db3a20, 24)     = 0
+rseq(0x7f70d0db40e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f70d0fcb000, 16384, PROT_READ) = 0
+mprotect(0x55aa89f02000, 4096, PROT_READ) = 0
+mprotect(0x7f70d101d000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f70d0fde000, 20139)           = 0
+getrandom("\xdc\x6f\x5a\xcb\x1f\xba\x3a\x52", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55aa8a804000
+brk(0x55aa8a825000)                     = 0x55aa8a825000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f70d0aca000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = 8
+close(1      1       1       8
+)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc -l[K[K[K--help
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffe4b81c760 /* 23 vars */) = 0
+brk(NULL)                               = 0x5572a3064000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcfff33f90) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f63ede39000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f63ede34000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f63edc0c000
+mmap(0x7f63edc34000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f63edc34000
+mmap(0x7f63eddc9000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f63eddc9000
+mmap(0x7f63ede21000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f63ede21000
+mmap(0x7f63ede27000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f63ede27000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f63edc09000
+arch_prctl(ARCH_SET_FS, 0x7f63edc09740) = 0
+set_tid_address(0x7f63edc09a10)         = 36507
+set_robust_list(0x7f63edc09a20, 24)     = 0
+rseq(0x7f63edc0a0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f63ede21000, 16384, PROT_READ) = 0
+mprotect(0x5572a21a7000, 4096, PROT_READ) = 0
+mprotect(0x7f63ede73000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f63ede34000, 20139)           = 0
+getrandom("\x83\xb3\x19\xbc\x29\x24\xc7\xdc", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5572a3064000
+brk(0x5572a3085000)                     = 0x5572a3085000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f63ed920000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+wc--help: command not found
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ wc
+[?2004l      0       0       0
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ man wc
+[?2004l[?1049h[22;0;0t[?1h=WC(1)                                                                                User Commands                                                                                WC(1)[m
+[m
+[1mNAME[0m[m
+       wc - print newline, word, and byte counts for each file[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwc[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1mwc[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Print  newline, word, and byte counts for each FILE, and a total line if more than one FILE is specified.  A word is a non-zero-length sequence of characters delimited by white[m
+       space.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       The options below may be used to select which counts are printed, always in the following order: newline, word, character, byte, maximum line length.[m
+[m
+       [1m-c[0m, [1m--bytes[0m[m
+              print the byte counts[m
+[m
+       [1m-m[0m, [1m--chars[0m[m
+              print the character counts[m
+[m
+       [1m-l[0m, [1m--lines[0m[m
+              print the newline counts[m
+[m
+       [1m--files0-from[0m=[4mF[24m[m
+              read input from the files specified by NUL-terminated names in file F; If F is - then read names from standard input[m
+[m
+       [1m-L[0m, [1m--max-line-length[0m[m
+              print the maximum display width[m
+[m
+       [1m-w[0m, [1m--words[0m[m
+              print the word counts[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by Paul Rubin and David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report any translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2020 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       Full documentation <https://www.gnu.org/software/coreutils/wc>[m
+       or available locally via: info '(coreutils) wc invocation'[m
+[m
+GNU coreutils 8.32                                                                   February 2022                                                                                WC(1)[m
+[7m Manual page wc(1) line 1/56 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ man wc[4Pwcstrace whoami | wc--help[K[K[K[K[K[K -l
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7fffbb55b190 /* 23 vars */) = 0
+brk(NULL)                               = 0x55b64cd42000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd5c599760) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fefb90b7000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fefb90b2000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fefb8e8a000
+mmap(0x7fefb8eb2000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fefb8eb2000
+mmap(0x7fefb9047000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fefb9047000
+mmap(0x7fefb909f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fefb909f000
+mmap(0x7fefb90a5000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fefb90a5000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fefb8e87000
+arch_prctl(ARCH_SET_FS, 0x7fefb8e87740) = 0
+set_tid_address(0x7fefb8e87a10)         = 36528
+set_robust_list(0x7fefb8e87a20, 24)     = 0
+rseq(0x7fefb8e880e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fefb909f000, 16384, PROT_READ) = 0
+mprotect(0x55b64c69e000, 4096, PROT_READ) = 0
+mprotect(0x7fefb90f1000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fefb90b2000, 20139)           = 0
+getrandom("\xb1\x0a\x1d\xb8\x54\x7f\xb2\xea", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55b64cd42000
+brk(0x55b64cd63000)                     = 0x55b64cd63000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fefb8b9e000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = 8
+close(11
+)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc -l[K[K[K[K[K[K[K[K
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffc88e06ba0 /* 23 vars */) = 0
+brk(NULL)                               = 0x55dbf0b45000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe3c41d710) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcf1a54e000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fcf1a549000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf1a321000
+mmap(0x7fcf1a349000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fcf1a349000
+mmap(0x7fcf1a4de000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fcf1a4de000
+mmap(0x7fcf1a536000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fcf1a536000
+mmap(0x7fcf1a53c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fcf1a53c000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcf1a31e000
+arch_prctl(ARCH_SET_FS, 0x7fcf1a31e740) = 0
+set_tid_address(0x7fcf1a31ea10)         = 36532
+set_robust_list(0x7fcf1a31ea20, 24)     = 0
+rseq(0x7fcf1a31f0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fcf1a536000, 16384, PROT_READ) = 0
+mprotect(0x55dbef541000, 4096, PROT_READ) = 0
+mprotect(0x7fcf1a588000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fcf1a549000, 20139)           = 0
+getrandom("\x32\xbf\xbc\x79\x31\x66\x81\x9c", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55dbf0b45000
+brk(0x55dbf0b66000)                     = 0x55dbf0b66000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fcf1a035000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8jdizzle
+)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc -l
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffd1099ae20 /* 23 vars */) = 0
+brk(NULL)                               = 0x55de3091d000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd5bb56320) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f881e405000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f881e400000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f881e1d8000
+mmap(0x7f881e200000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f881e200000
+mmap(0x7f881e395000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f881e395000
+mmap(0x7f881e3ed000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f881e3ed000
+mmap(0x7f881e3f3000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f881e3f3000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f881e1d5000
+arch_prctl(ARCH_SET_FS, 0x7f881e1d5740) = 0
+set_tid_address(0x7f881e1d5a10)         = 36538
+set_robust_list(0x7f881e1d5a20, 24)     = 0
+rseq(0x7f881e1d60e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f881e3ed000, 16384, PROT_READ) = 0
+mprotect(0x55de2ff55000, 4096, PROT_READ) = 0
+mprotect(0x7f881e43f000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f881e400000, 20139)           = 0
+getrandom("\x70\x6d\x21\x18\x34\xc2\xda\x09", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55de3091d000
+brk(0x55de3093e000)                     = 0x55de3093e000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f881deec000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+write(1, "jdizzle\n", 8)                = 8
+close(11
+)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami | wc -l[K[K[K[K[K[K[K[K > de[K[K/dev/null
+[?2004lexecve("/usr/bin/whoami", ["whoami"], 0x7ffd93949160 /* 23 vars */) = 0
+brk(NULL)                               = 0x55bf338eb000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdc7584330) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fbff6f70000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20139, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20139, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fbff6f6b000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbff6d43000
+mmap(0x7fbff6d6b000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fbff6d6b000
+mmap(0x7fbff6f00000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fbff6f00000
+mmap(0x7fbff6f58000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fbff6f58000
+mmap(0x7fbff6f5e000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fbff6f5e000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fbff6d40000
+arch_prctl(ARCH_SET_FS, 0x7fbff6d40740) = 0
+set_tid_address(0x7fbff6d40a10)         = 36542
+set_robust_list(0x7fbff6d40a20, 24)     = 0
+rseq(0x7fbff6d410e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fbff6f58000, 16384, PROT_READ) = 0
+mprotect(0x55bf3336e000, 4096, PROT_READ) = 0
+mprotect(0x7fbff6faa000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fbff6f6b000, 20139)           = 0
+getrandom("\xbd\x95\x6a\x17\xbc\xff\x11\x91", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55bf338eb000
+brk(0x55bf3390c000)                     = 0x55bf3390c000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fbff6a57000
+close(3)                                = 0
+geteuid()                               = 1000
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 510
+read(3, "", 4096)                       = 0
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1832, ...}, AT_EMPTY_PATH) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1832
+close(3)                                = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}, AT_EMPTY_PATH) = 0
+ioctl(1, TCGETS, 0x7ffdc7584190)        = -1 ENOTTY (Inappropriate ioctl for device)
+write(1, "jdizzle\n", 8)                = 8
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami > /dev/null[K[K[K[K[K[K[K[K[K[K[K2>&1 | wc -l
+[?2004l66
+[?2004h]0;jdizzle@farsky: ~/CS-421/Homework-1/Part-5jdizzle@farsky:~/CS-421/Homework-1/Part-5$ [7mjdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami 2>&1 | wc -l[27m
+[7m66[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjdizzle@farsky:~/CS-421/Homework-1/Part-5$ strace whoami 2>&1 | wc -l
+66
+[7mwrite(1, "jdizzle\n", 8)                = 8[27m
+[Awrite(1, "jdizzle\n", 8)                = 8
+exit
+[?2004l1
+66: command not found
+bash: syntax error near unexpected token `1,'
+exit
+
+Script done on 2023-02-14 19:46:31-06:00 [COMMAND_EXIT_CODE="2"]

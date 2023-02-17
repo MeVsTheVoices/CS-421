@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/wait.h>
 
 #define MAX_LINE 80 /* 80 chars per line, per command, should be enough. */
 
@@ -91,32 +92,62 @@ int getArgumentCeil(char** args) {
 	return i;
 }
 
-int isBuiltIn(char* cmd, char* arg) {
-	if (strcmp(cmd, "jobs")) {
+int isBuiltIn(char* cmd, char** arg) {
+	if (strcmp(cmd, "jobs") == 0 ) {
 		builtIn_jobs();
-		return 1;
+		printf("executing builtin: jobs\n");
+		return 0;
 	}
-	else if (strcmp(cmd, "stop")) {
+	else if (strcmp(cmd, "stop") == 0 ) {
 		builtIn_stop();
-		return 1;
+		printf("executing builtin: stop\n");
+		return 0;
 	}
-	else if (strcmp(cmd, "bg")) {
+	else if (strcmp(cmd, "bg") == 0 ) {
 		builtIn_bg();
-		return 1;
+		printf("executing builtin: bg\n");
+		return 0;
 	}
-	else if (strcmp(cmd, "fg")) {
+	else if (strcmp(cmd, "fg") == 0 ) {
 		builtIn_fg();
-		return 1;
+		printf("executing builtin: fg\n");
+		return 0;
 	}
-	else if (strcmp(cmd, "kill")) {
+	else if (strcmp(cmd, "kill") == 0 ) {
 		builtIn_kill();
-		return 1;
+		printf("executing builtin: kill\n");
+		return 0;
 	}
-	return 0;
+	return -1;
 }
 
-int doForegroundCommand(char* cmd, char** args) {
+int BACKGROUND_PROCESS_CEIL = 50;
+int PIDsOfBackgroundProcesses[50];
+/* if this is zero, we have no foreground process */
+int PIDOfForegroundProcess = 0;
 
+int doForegroundCommand(char* cmd, char** args) {
+	pid_t child_pid;
+	int child_status;
+	
+	child_pid = fork();
+	printf("[Child pid = %d, background = %s]\n", child_pid, "FALSE");
+	if (child_pid == 0) {
+		/* continue as child process */
+		execvp(cmd, args);
+
+		/* continues only if execvp fails */
+		printf("failed to invoke %s\n", cmd);
+		return -1;
+	} else {
+		/* as it is a foreground command, we'll wait
+		 * here until it finished */
+		pid_t tpid;
+		do {
+			tpid = wait(&child_status);
+		} while (tpid != child_pid);
+		printf("%d (%s) returned %d\n", tpid, cmd, child_status);
+	}
 }
 
 int doBackgroundCommand(char* cmd, char** args) {
@@ -142,19 +173,24 @@ int isCommand(char* cmd, char** args) {
 			args[numberOfArguments - 1][lengthOfFinalArgument - 1] = '\0';
 			return doBackgroundCommand(cmd, args);
 		}
-		int lastIndexOfCommand;
-		for (lastIndexOfCommand = 0; 
-				(cmd[lastIndexOfCommand] != '\0') &&
-				(cmd[lastIndexOfCommand + 1] != '\0');
-				 lastIndexOfCommand++) {}
-		if (cmd[lastIndexOfCommand] == '&') {
-			/* here we're launching as background
-			 * because & was the last character
-			 * of the command */
-			cmd[lastIndexOfCommand] = '&';
-			return doBackgroundCommand(cmd, args);
-		}
+	
 	}
+	int lastIndexOfCommand;
+	for (lastIndexOfCommand = 0; 
+			(cmd[lastIndexOfCommand] != '\0') &&
+			(cmd[lastIndexOfCommand + 1] != '\0');
+			 lastIndexOfCommand++) {}
+	if (cmd[lastIndexOfCommand] == '&') {
+		/* here we're launching as background
+		 * because & was the last character
+		 * of the command */
+		cmd[lastIndexOfCommand] = '\0';
+		return doBackgroundCommand(cmd, args);
+	}
+	else {
+		doForegroundCommand(cmd, args);
+	}
+
 }
 
 int doIntro() {
@@ -181,6 +217,12 @@ char inputBuffer[MAX_LINE];      /* buffer to hold the command entered */
        doPrompt();
        fflush(stdout);
        setup(inputBuffer,args,&background);       /* get next command */
+
+       if (isBuiltIn(inputBuffer, args) == -1) {
+		if (isCommand(inputBuffer, args) == -1) {
+			printf("failed to find %s\n", inputBuffer);
+		}
+       }
 
       /* the steps are:
        (0) if built-in command, handle internally

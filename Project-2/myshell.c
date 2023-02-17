@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <sys/types.h>
 
 #define MAX_LINE 80 /* 80 chars per line, per command, should be enough. */
 
@@ -126,13 +127,47 @@ int PIDsOfBackgroundProcesses[50];
 /* if this is zero, we have no foreground process */
 int PIDOfForegroundProcess = 0;
 
+int doHandleChildProcessEnded(int childPID, int* childStatus) {
+	if (WIFEXITED(*childStatus)) {
+		printf("%d exited, status %d\n", childPID, WEXITSTATUS(*childStatus));
+	} else if (WIFSIGNALED(*childStatus)) {
+		printf("%d killed by signal  %d\n", childPID, WTERMSIG(*childStatus));
+	} else if (WIFSTOPPED(*childStatus)) {
+		printf("%d stopped by signal %d\n", childPID, WSTOPSIG(*childStatus));
+	} else if (WIFCONTINUED(*childStatus)) {
+		printf("%d continued\n", childPID);
+	}
+}
+
 int doForegroundCommand(char* cmd, char** args) {
 	pid_t child_pid;
 	int child_status;
 	
 	child_pid = fork();
-	printf("[Child pid = %d, background = %s]\n", child_pid, "FALSE");
 	if (child_pid == 0) {
+		/* continue as child process */
+		execvp(cmd, args);
+
+		/* continues only if execvp fails */
+		printf("failed to invoke %s\n", cmd);
+		return -1;
+	} else {
+		printf("[Child pid = %d, background = %s]\n", child_pid, "FALSE");
+		/* as it is a foreground command, we'll wait
+		 * here until it finished */
+		waitpid(child_pid, &child_status, WUNTRACED | WCONTINUED);
+		doHandleChildProcessEnded(child_pid, &child_status);
+	}
+}
+
+int doBackgroundCommand(char* cmd, char** args) {
+	pid_t child_pid;
+	int child_status;
+	
+	child_pid = fork();
+	if (child_pid == 0) {
+		printf("[Child pid = %d, background = %s]\n", child_pid, "TRUE");
+
 		/* continue as child process */
 		execvp(cmd, args);
 
@@ -148,10 +183,6 @@ int doForegroundCommand(char* cmd, char** args) {
 		} while (tpid != child_pid);
 		printf("%d (%s) returned %d\n", tpid, cmd, child_status);
 	}
-}
-
-int doBackgroundCommand(char* cmd, char** args) {
-
 }
 
 int isCommand(char* cmd, char** args) {
@@ -171,6 +202,8 @@ int isCommand(char* cmd, char** args) {
 			 * of the last argument*/	
 
 			args[numberOfArguments - 1][lengthOfFinalArgument - 1] = '\0';
+			if ((lengthOfFinalArgument - 1) == 0)
+				args[numberOfArguments - 1] = NULL;
 			return doBackgroundCommand(cmd, args);
 		}
 	
@@ -191,6 +224,11 @@ int isCommand(char* cmd, char** args) {
 		doForegroundCommand(cmd, args);
 	}
 
+}
+
+void handle_SIGQUIT() {
+	/*write(STDOUT_FILENO, buffer, strlen(buffer));
+	  */
 }
 
 int doIntro() {

@@ -1,0 +1,74 @@
+Script started on 2023-03-01 01:29:51-05:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="157" LINES="85"]
+[?2004h]0;jdizzle@sipsky: ~/CS-421/CS-421/Project-2jdizzle@sipsky:~/CS-421/CS-421/Project-2$ ./m[Ka.out 
+[?2004lWelcome to kbshell. My pid is 192044
+jdshell[1]: cp myshee      a.out tempfile
+[Child pid = 192045, background = FALSE]
+192045 exited, status 0
+jdshell[2]: ls -l tempfile
+[Child pid = 192046, background = FALSE]
+-rwxrwxr-x 1 jdizzle jdizzle 22088 Mar  1 01:30 tempfile
+192046 exited, status 0
+jdshell[3]: time sleep 5
+[Child pid = 192047, background = FALSE]
+0.00user 0.00system 0:05.00elapsed 0%CPU (0avgtext+0avgdata 2164maxresident)k
+0inputs+0outputs (0major+87minor)pagefaults 0swaps
+192047 exited, status 0
+jdshell[4]: time sleep 20 &
+[Child pid = 192049, background = TRUE]
+jdshell[5]: date
+[Child pid = 192051, background = FALSE]
+Wed Mar  1 01:30:52 AM EST 2023
+192051 exited, status 0
+jdshell[6]: 0.00user 0.00system 0:20.00elapsed 0%CPU (0avgtext+0avgdata 2112maxresident)k
+0inputs+0outputs (0major+84minor)pagefaults 0swaps
+
+jdshell[7]: sleep 100 &
+[Child pid = 192052, background = TRUE]
+jdshell[8]: stop 192052
+stopped job 7
+[7] (PID: 192052): Stopped
+executing builtin: stop on 192052
+jdshell[9]: ps 192052
+[7] (PID: 192052): Stopped
+executing builtin: ps on 192052
+jdshell[10]: bg 192052
+backgrounding job 7
+[7] (PID: 192052): Continued
+executing builtin: bg on 192052
+jdshell[11]: ps 192052
+[7] (PID: 192052): Continued
+executing builtin: ps on 192052
+jdshell[12]: stop 192052
+stopped job 7
+[7] (PID: 192052): Stopped
+executing builtin: stop on 192052
+jdshell[13]: fg 192052
+foregrounding job 7
+[7] (PID: 192052): Continued
+executing builtin: fg on 192052
+jdshell[14]: sleep 100 &
+[Child pid = 192053, background = TRUE]
+jdshell[15]: ps 192053
+[14] (PID: 192053): 
+executing builtin: ps on 192053
+jdshell[16]: kill 192053
+killing job 14
+[14] (PID: 192053): Exited
+executing builtin: kill on 192053
+jdshell[17]: ps 192053
+[14] (PID: 192053): Exited
+executing builtin: ps on 192053
+jdshell[18]: sleep 100
+[Child pid = 192056, background = FALSE]
+^\Caught Ctrl-\
+Quitting 192056
+192056 killed by signal  48
+jdshell[19]: ps 192056
+[18] (PID: 192056): Killed
+executing builtin: ps on 192056
+jdshell[20]: exit
+jdshell exiting
+[?2004h]0;jdizzle@sipsky: ~/CS-421/CS-421/Project-2jdizzle@sipsky:~/CS-421/CS-421/Project-2$ exit
+[?2004lexit
+
+Script done on 2023-03-01 01:35:01-05:00 [COMMAND_EXIT_CODE="0"]

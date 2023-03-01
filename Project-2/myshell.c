@@ -14,6 +14,8 @@
  * null-terminated string.
  */
 
+/* setup kept as is */
+
 void setup(char inputBuffer[], char *args[],int *background)
 {
     int length, /* # of characters in the command line */
@@ -67,12 +69,15 @@ void setup(char inputBuffer[], char *args[],int *background)
      args[ct] = NULL; /* just in case the input line was > 80 */
 }
 
+/* give ourselves some space to store the pids of jobs we issue and their status */
 int BACKGROUND_PROCESS_CEIL = 50;
 int PIDsOfBackgroundProcesses[50];
 int StatusOfBackgroundProcesses[50];
+char StatusOfBackgroundProcessesString[50][50];
 /* if this is zero, we have no foreground process */
 static int CommandCount = 1;
 
+/* these three functions allow for us to go between job numbers and pids */
 int getBackgroundProcessIndex(int pid) {
 	int i;
 	for ( i = 1; i < 50; i++ ){
@@ -89,29 +94,43 @@ int getBackgroundProcessStatus(int pid) {
 	return StatusOfBackgroundProcesses[getBackgroundProcessIndex(pid)];
 }
 
-
-int builtIn_jobs() {
-	int i = 0;
-	for ( i = 1; i < CommandCount; i++) {
-		if (PIDsOfBackgroundProcesses[i] != 0) {
-			if (!(PIDsOfBackgroundProcesses[i] == -1 ))
-				printf("[%d] (PID: %d): ", i, PIDsOfBackgroundProcesses[i]);
-			if (WIFEXITED(StatusOfBackgroundProcesses[i]))
-				printf("exited %d ", WEXITSTATUS(StatusOfBackgroundProcesses[i]));
-			if (WIFSIGNALED(StatusOfBackgroundProcesses[i]))
-				printf("signaled ");
-			if (WTERMSIG(StatusOfBackgroundProcesses[i]))
-				printf("terminated ");
-			printf("\n");
-		}
+int printDetailsAboutBackgroundProcess(int i) {
+	if (i != 0) {
+		if (PIDsOfBackgroundProcesses[i] != -1 )
+			printf("[%d] (PID: %d): ", i, PIDsOfBackgroundProcesses[i]);
+		/*if (WIFEXITED(StatusOfBackgroundProcesses[i]))
+			printf("exited %d ", WEXITSTATUS(StatusOfBackgroundProcesses[i]));
+		if (WIFSIGNALED(StatusOfBackgroundProcesses[i]))
+			printf("signaled ");
+		if (WTERMSIG(StatusOfBackgroundProcesses[i]))
+			printf("terminated ");
+		if (WIFSTOPPED(StatusOfBackgroundProcesses[i]))
+			printf("stopped %d ", WSTOPSIG(StatusOfBackgroundProcesses[i]));
+		if (WIFCONTINUED(StatusOfBackgroundProcesses[i]))
+			printf("contiued ");*/
+		printf("%s", StatusOfBackgroundProcessesString[i]);
+		printf("\n");
 	}
 }
 
+/* look at the last saved status of each command and try to reveal
+ * as much information as possible as is comtained in sttaus */
+int builtIn_jobs() {
+	int i = 0;
+	for ( i = 1; i < CommandCount; i++) {
+		printDetailsAboutBackgroundProcess(i);
+	}
+}
+
+/* these four functions are are different in the signal they send */
 int builtIn_stop(int pid) {
 	kill(pid, SIGSTOP);
 	int index = getBackgroundProcessIndex(pid);
 	printf("stopped job %d\n", index);
-	StatusOfBackgroundProcesses[index] = StatusOfBackgroundProcesses[index] | WSTOPPED;
+	/* attempt to incorporate new information in to status */
+	StatusOfBackgroundProcesses[index] = WSTOPPED;
+	strcpy(StatusOfBackgroundProcessesString[index], "Stopped");
+	printDetailsAboutBackgroundProcess(index);
 	return 0;
 }
 
@@ -119,7 +138,10 @@ int builtIn_bg(int pid) {
 	kill(pid, SIGCONT);
 	int index = getBackgroundProcessIndex(pid);
 	printf("backgrounding job %d\n", index);
-	StatusOfBackgroundProcesses[index] = StatusOfBackgroundProcesses[index] | WCONTINUED;
+	StatusOfBackgroundProcesses[index] =  WCONTINUED;
+	strcpy(StatusOfBackgroundProcessesString[index], "Continued");
+	printDetailsAboutBackgroundProcess(index);
+	/* we're not waiting around unlike bg, return */
 	return 0;
 }
 
@@ -128,8 +150,11 @@ int builtIn_fg(int pid) {
 	kill(pid, SIGCONT);
 	int index = getBackgroundProcessIndex(pid);
 	printf("foregrounding job %d\n", index);
-	StatusOfBackgroundProcesses[index] = StatusOfBackgroundProcesses[index] | WCONTINUED;
+	StatusOfBackgroundProcesses[index] = WCONTINUED;
+	strcpy(StatusOfBackgroundProcessesString[index], "Continued");
+	printDetailsAboutBackgroundProcess(index);
 	int status;
+	/* the only difference with bg and fg is theat here we wait */
 	return waitpid(pid, &status, WUNTRACED);
 }
 
@@ -137,20 +162,26 @@ int builtIn_kill(int pid) {
 	kill(pid, SIGKILL);
 	int index = getBackgroundProcessIndex(pid);
 	printf("killing job %d\n", index);
-	StatusOfBackgroundProcesses[index] = StatusOfBackgroundProcesses[index] | WEXITED;
+	StatusOfBackgroundProcesses[index] = WEXITED;
+	strcpy(StatusOfBackgroundProcessesString[index], "Exited");
+	printDetailsAboutBackgroundProcess(index);
 	return 0;
 }
 
 int builtIn_ps(int pid) {
-	
+	int index = getBackgroundProcessIndex(pid);
+	return printDetailsAboutBackgroundProcess(index);
 }
 
+/* simply returns +1 on this highest index */
 int getArgumentCeil(char** args) {
 	int i;	
 	for ( i = 0; args[i] != NULL;) { i++; }
 	return i;
 }
 
+/* differentiates between the various background commands, if noone match
+ * returns a value to indicate to issue as a command */
 int isBuiltIn(char* cmd, char** arg) {
 	if (strcmp(cmd, "jobs") == 0 ) {
 		builtIn_jobs();
@@ -195,18 +226,24 @@ int isBuiltIn(char* cmd, char** arg) {
 	return -1;
 }
 
-
+/* we come here whenever we went and waited for a process to end */
 int doHandleChildProcessEnded(int childPID, int* childStatus) {
 	if (childPID == -1) {
 		return -1;
-	} else if (WIFEXITED(*childStatus)) {
+	}
+	int index = getBackgroundProcessIndex(childPID);	
+	if (WIFEXITED(*childStatus)) {
 		printf("%d exited, status %d\n", childPID, WEXITSTATUS(*childStatus));
+		strcpy(StatusOfBackgroundProcessesString[index], "Exited");
 	} else if (WIFSIGNALED(*childStatus)) {
 		printf("%d killed by signal  %d\n", childPID, WTERMSIG(*childStatus));
+		strcpy(StatusOfBackgroundProcessesString[index], "Killed");
 	} else if (WIFSTOPPED(*childStatus)) {
 		printf("%d stopped by signal %d\n", childPID, WSTOPSIG(*childStatus));
+		strcpy(StatusOfBackgroundProcessesString[index], "Stopped");
 	} else if (WIFCONTINUED(*childStatus)) {
 		printf("%d continued\n", childPID);
+		strcpy(StatusOfBackgroundProcessesString[index], "Continued");
 	}
 	return 0;
 }
@@ -251,6 +288,8 @@ int doBackgroundCommand(char* cmd, char** args) {
 		return -1;
 	}
 	else {
+		/* insde here we're saving details on the process and returning 
+		 * so that the shell can be issued another */
 		PIDsOfBackgroundProcesses[CommandCount - 1] = child_pid;
 		setBackgroundProcessAs(child_pid, WCONTINUED);
 		printf("[Child pid = %d, background = %s]\n", child_pid, "TRUE");
@@ -258,6 +297,7 @@ int doBackgroundCommand(char* cmd, char** args) {
 	}
 }
 
+/* basic branch between the two remaining possibilities */
 int isCommand(char* cmd, char** args, int isBackground) {
 	if (isBackground) {
 		return doBackgroundCommand(cmd, args);		
@@ -271,7 +311,7 @@ int isCommand(char* cmd, char** args, int isBackground) {
 int sigHandlerBufferSize = 50;
 char sigHandlerBuffer[50];
 
-
+/* handle a quit, pass it oh, handle errors */
 void handle_SIGQUIT() {
 	/*write(STDOUT_FILENO, buffer, strlen(buffer));	  */
 	printf("Caught Ctrl-\\\n");
@@ -281,6 +321,7 @@ void handle_SIGQUIT() {
 		printf("Failed to quit %d\n", PIDsOfBackgroundProcesses[CommandCount - 1]);
 }
 
+/* swapped in the new waitid so I could nohang */
 int doWait(int* status) {
 	siginfo_t t;
 	int ret = waitid(P_PID, getpid(), &t, WNOHANG);
@@ -288,11 +329,13 @@ int doWait(int* status) {
 	return ret;
 }
 
+/* first time through only */
 int doIntro() {
 	printf("Welcome to kbshell. My pid is %d\n", getpid());
 	return 0;
 }
 
+/* first time and every other time */
 int doPrompt() {
 	static const char* initials = "jd";
 	printf("%sshell[%d]: ", initials, CommandCount++);
@@ -304,7 +347,8 @@ int main(void)
 char inputBuffer[MAX_LINE];      /* buffer to hold the command entered */
     int background = 0;              /* equals 1 if a command is followed by '&' */
     char *args[(MAX_LINE/2)+1];  /* command line (of 80) has max of 40 arguments */
-
+	
+	 
 	struct sigaction handler;
 	handler.sa_handler = handle_SIGQUIT;
 	sigaction(SIGQUIT, &handler, NULL);

@@ -5,8 +5,8 @@ from math import ceil
 
 class SchedulerStrategy:
 	"""Base class to allow polymorphism for scheduling strategies"""
-	@abstractmethod
 	#only method here, ensure children implement functionality
+	@abstractmethod
 	def do_simulation(self, processes):
 		pass
 
@@ -16,6 +16,9 @@ class FirstComeFirstServe(SchedulerStrategy):
 		results = []
 		readyQueue = processes
 		readyQueue.sort(key= lambda x: (x[2]))
+		#carry out, relies on the starting time of the second
+		#to arrive process being before the burst time of the
+		#first to arrive process concluding
 		for i in readyQueue:
 			results.append([i[0], i[1]])
 		return results
@@ -43,7 +46,7 @@ class ShortestJobFirst(SchedulerStrategy):
 					break
 		return results
 					
-		
+#parameterize our class based on the time quantum used to inialize	
 class RoundRobin(SchedulerStrategy):
 	#keep the quantum as a class variable
 	def __init__(self, quantum):
@@ -53,6 +56,8 @@ class RoundRobin(SchedulerStrategy):
 	#per the round robin strategy, build a list with corresponding
 	#times for which the process run, and the sequence in which they ran
 	def do_simulation(self, processes):
+		if (self.quantum <= 0):
+			return
 		if (len(processes) <= 0):
 			return
 		
@@ -68,7 +73,6 @@ class RoundRobin(SchedulerStrategy):
 		while (oneWasntFinished):
 			oneWasntFinished = False
 			for i in readyQueue:
-				print(readyQueue)
 				#skip over all finished processes
 				if i[1] <= 0:
 					continue
@@ -131,7 +135,7 @@ def print_gant_chart(results):
 	columns, _ = get_terminal_size()
 	#columns - 2 * len corrects for extra | characters
 	#and the names of the processes (characters)
-	columns = (columns - 2*len(results)) * 0.75
+	columns = (columns - 2*len(results))
 	totalTime = 0
 	for i in results:
 		totalTime = totalTime + i[1]
@@ -166,3 +170,43 @@ def do_simulation(strategy):
 	for i in summary:
 		print("{:<9} {:<9} {:<9} {:<9}".format(i[0], i[1], i[2], i[3]))
 	print_gant_chart(results)
+
+#print a header with the string passed residing halfway horizontall in the console
+def print_header(header):
+	#if our header is wider than our terminal, forget the padding and print
+	columns, _ = get_terminal_size()
+	if (len(header)) >= columns:
+		print(header)
+	#otherwise we're putting the string given half way
+	length = columns - (len(header))
+	half = length // 2
+	#pad left
+	for i in range(half):
+		print("-", end="")
+	#print
+	print(header, end="")
+	#pad right
+	for i in range(half):
+		print("-", end="")
+	#new line
+	print("")
+
+#run each of the algorithms specified so far through
+def demonstrate() :
+	for i in range(2, 5):
+		#print pretty headers to easily delineate
+		print_header("Round Robin for quantum = " + str(i))
+		do_simulation(RoundRobin(i))
+
+	print_header("First Come First Serve")
+	do_simulation(FirstComeFirstServe())
+
+	print_header("Shortest Job First")
+	do_simulation(ShortestJobFirst())
+
+def main() :
+	#only carrying out one task so far
+	demonstrate()
+
+if __name__ == "__main__":
+	main()

@@ -1,6 +1,10 @@
 This is for 2235-CS-421-01-2452-1 at CSUEB during the Spring '23 semester
 
 Project 2 is a very basic shell that supports
+                Switching between jobs
+                Foreground/Background
+                Terminating
+                Listing jobs
 
 
 Project 3 simulates

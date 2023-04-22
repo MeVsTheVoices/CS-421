@@ -13,3 +13,6 @@ Project 3 simulates
 		Round Robin
 	As scheduling algorithms, then displays their relative statistics
 	And a nice gant chart to display the sequence and times of execution
+
+Lab 4
+	Recreates the producer consumer problem using pthreads

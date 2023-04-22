@@ -6,9 +6,15 @@
 
 #include <semaphore.h>
 
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/syscall.h>
+
 typedef int buffer_item;
 
- int main(int argc, char **argv) {
+const int BUFFER_CEIL = 5;
+
+int main(int argc, char **argv) {
     // organize CLI arguments
 
     // reject any attempt to run with invalid arguments
@@ -27,41 +33,34 @@ typedef int buffer_item;
 
     // create a buffer for producer/consumer
 
-    int buffer_ceil = 5;
-    sem_t mutex;
-    sem_t empty;
-    sem_t full;
+    int buffer[BUFFER_CEIL];
 
-    if (sem_init(&mutex, 0, 1) != 0) {
-        perror("sem_init");
-        exit(1);
-    } else if (sem_init(&empty, 0, buffer_ceil) != 0) {
-        perror("sem_init");
-        exit(1);
-    } else if (sem_init(&full, 0, 0) != 0) {
-        perror("sem_init");
-        exit(1);
-    }
-    /*buffer_item buffer[buffer_ceil];
-
-    pthread_attr_t thread_attributes;
     
     // create produce threads
+    pthread_attr_t thread_attributes;
 
     for (int i = 0; i < num_producers; i++)
-        pthread_create(&producer_threads[i], &thread_attributes, produce, (void *) &producer_threads[i]);
+        pthread_create(&producer_threads[i], &thread_attributes, 
+                        produce, &buffer);
 
     // create consumer threads
 
-    // sleep*/
+    for (int i = 0; i < num_consumers; i++)
+        pthread_create(&consumer_threads[i], &thread_attributes,
+                        consume, &buffer);
 
+    // sleep
+
+    void* status;
+    pthread_join(consumer_threads[num_consumers - 1], status); 
+    pthread_join(producer_threads[num_producers - 1], status);
     return 0;
 }
 
-void produce(void* arg) {
-
+void produce(int* buffer) {
+    printf("Creating producer thread with id %d\n", 1); 
 }
 
-void consume(void* arg) {
-
+void consume(int* buffer) {
+    printf("Creating consumer thread with id %d\n", 2); 
 }

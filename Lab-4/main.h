@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv);
 
-void produce(void* arg);
-void consume(void* arg);
+void produce(int* arg);
+void consume(int* arg);
 
 #endif /* MAIN_H */

@@ -57,10 +57,12 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-void produce(int* buffer) {
-    printf("Creating producer thread with id %d\n", 1); 
+void produce(void* buffer) {
+    pid_t thread_id = syscall(__NR_gettid);
+    printf("Creating producer thread with id %d\n", thread_id); 
 }
 
-void consume(int* buffer) {
-    printf("Creating consumer thread with id %d\n", 2); 
+void consume(void* buffer) {
+    pid_t thread_id = syscall(__NR_gettid);
+    printf("Creating consumer thread with id %d\n", thread_id); 
 }

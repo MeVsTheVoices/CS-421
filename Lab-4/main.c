@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#include <sys/semaphore.h>
+#include <semaphore.h>
 
 typedef int buffer_item;
 
@@ -15,7 +15,7 @@ typedef int buffer_item;
     // no greater than 10 seconds or 10 of each type of thread
     if (argc != 4 || atoi(argv[1]) < 1 || atoi(argv[2]) < 1 || atoi(argv[3]) < 1
                   || atoi(argv[1]) > 9 || atoi(argv[2]) > 9 || atoi(argv[3]) > 9)
-        printf("Usage: %s <time_to_run> <num_producers> <num_consumers>", argv[0]);
+        printf("Usage: %s <time_to_run> <num_producers> <num_consumers>\n", argv[0]);
 
     
     int time_to_run =   atoi(argv[1]);

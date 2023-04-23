@@ -16,7 +16,9 @@
 
 typedef int buffer_item;
 
-const int BUFFER_CEIL = 5;
+// correlate with buffer
+const int BUFFER_CEIL = 10;
+
 const int SLEEP_FLOOR = 1;
 const int SLEEP_CEIL = 3;
 const int DATA_FLOOR = 1;
@@ -25,21 +27,22 @@ const int DATA_CEIL = 100;
 int currentBufferIndex = 0;
 
 // be sure to correlate with BUFFER_CEIL
-int buffer[5];
+int buffer[10];
 
-semaphore mutex = 1;
-semaphore empty = BUFFER_CEIL;
-semaphore full  = 0;
+sem_t mutex;
+sem_t empty;
+sem_t full;
 
 
 int main(int argc, char **argv) {
     srand(time(NULL));
+    printf("Main thread beginning\n");
     // organize CLI arguments
 
     // reject any attempt to run with invalid arguments
     // no greater than 10 seconds or 10 of each type of thread
     if (argc != 4 || atoi(argv[1]) < 1 || atoi(argv[2]) < 1 || atoi(argv[3]) < 1
-                  || atoi(argv[1]) > 9 || atoi(argv[2]) > 9 || atoi(argv[3]) > 9) {
+                  || atoi(argv[1]) >90 || atoi(argv[2]) > 9 || atoi(argv[3]) > 9) {
         printf("Usage: %s <time_to_run> <num_producers> <num_consumers>\n", argv[0]);
         exit(-1);
     }
@@ -58,6 +61,17 @@ int main(int argc, char **argv) {
     
     //create necessary synchronization tools
     
+    if (sem_init(&mutex, 0, 1) != 0) {
+        perror("error creating semaphore\n");
+        exit(-1);
+    } else if (sem_init(&empty, 0, BUFFER_CEIL) != 0) {
+        perror("error creating semaphore\n");
+        exit(-1);
+    } else if (sem_init(&full, 0, 0) != 0) {
+        perror("error creating semaphore\n");
+        exit(-1);
+    }
+
     // create produce threads
     pthread_attr_t thread_attributes;
 
@@ -73,12 +87,12 @@ int main(int argc, char **argv) {
 
     // sleep
 
-    void* status;
-    pthread_join(consumer_threads[num_consumers - 1], status); 
-    pthread_join(producer_threads[num_producers - 1], status);
+    printf("Main thread sleeping for %d seconds\n", time_to_run);
+    sleep(time_to_run);
     return 0;
 }
 
+// my insert function
 void produce(void* status) {
     // produce and consume are mostly alike
     pid_t thread_id = syscall(__NR_gettid);
@@ -96,20 +110,25 @@ void produce(void* status) {
         // printf("produced a %d having slept %d seconds in thread id %d\n", 
         //         data, time_to_sleep, thread_id);
 
-        sem_wait(empty);
-        sem_wait(mutex);
+        sem_wait(&empty);
+        sem_wait(&mutex);
 
         // critical section
         
         buffer[currentBufferIndex] = data;
         printf("Producer thread %d inserted value %d\n", thread_id, data);
+        for (int i = 0; i < BUFFER_CEIL; i++) {
+            printf("[%d]", buffer[i]);
+        }
+        printf("\n");
         currentBufferIndex++;
 
-        sem_post(mutex);
-        sem_post(full);
+        sem_post(&mutex);
+        sem_post(&full);
     }
 }
 
+// my remove function
 void consume(void* status) {
     pid_t thread_id = syscall(__NR_gettid);
     // print thread id
@@ -124,16 +143,21 @@ void consume(void* status) {
         // printf("consumed having slept %d seconds in thread id %d\n", 
         //         time_to_sleep, thread_id); 
    
-        sem_wait(full);
-        sem_wait(mutex);
+        sem_wait(&full);
+        sem_wait(&mutex);
 
         // critical section
         
         printf("Consumer thread %d removed value %d\n",
                 thread_id, buffer[currentBufferIndex - 1]);
+        buffer[currentBufferIndex - 1] = 0;
+        for (int i = 0; i < BUFFER_CEIL; i++) {
+            printf("[%d]", buffer[i]);
+        }
+        printf("\n");
         currentBufferIndex--;
 
-        sem_post(mutex);
-        sem_post(empty);
+        sem_post(&mutex);
+        sem_post(&empty);
     }
 }
